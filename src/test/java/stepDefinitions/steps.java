@@ -58,6 +58,23 @@ public class steps {
 
     }
 
+    @When("user able to delete a student record {string}")
+    public void user_able_to_delete_a_student_record(String URI) {
+       when().delete(URI).then()
+               .statusCode(200)
+               .log().body();
+    }
+
+    @Then("check the status code as {int}")
+    public void check_the_status_code_as(Integer int1) {
+        
+
+    }
+
+    @When("user failed to delete a student record {string}")
+    public void user_failed_to_delete_a_student_record(String url) {
+        when().delete(url);
+    }
 
 
 
